@@ -1,0 +1,58 @@
+/*
+Example usage:
+
+<button class="button">Button</button>
+<button class="button red">Button</button>
+*/
+
+button {
+	background-color: #CCCCCC;
+	background: -moz-linear-gradient(0% 90% 90deg, #CCCCCC, #EEEEEE);
+	background: -ms-linear-gradient(#EEEEEE, #CCCCCC);
+	background: -o-linear-gradient(#EEEEEE, #CCCCCC);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEEEEE), to(#CCCCCC));
+	border: 1px solid #999999;
+	border-radius: 3px;
+	color: #444444;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#CCCCCC');
+	font-size: 10px;
+	font-weight: bolder;
+	outline: none;
+	padding: 5px 10px 5px 10px;
+}
+
+button:hover {
+	background: -moz-linear-gradient(0% 90% 90deg, #CCCCCC, #FFFFFF);
+	background: -ms-linear-gradient(#FFFFFF, #CCCCCC);
+	background: -o-linear-gradient(#FFFFFF, #CCCCCC);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#CCCCCC));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC');
+}
+
+button:active {
+	background: -moz-linear-gradient(0% 90% 90deg, #EEEEEE, #DDDDDD);
+	background: -ms-linear-gradient(#DDDDDD, #EEEEEE);
+	background: -o-linear-gradient(#DDDDDD, #EEEEEE);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDDDDD), to(#EEEEEE));
+	border: 1px solid #666666;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#EEEEEE');
+}
+
+button.red {
+	background-color: #D14836;
+	background: -moz-linear-gradient(0% 90% 90deg, #D14836, #FF8282);
+	background: -ms-linear-gradient(#FF8282, #D14836);
+	background: -o-linear-gradient(#FF8282, #D14836);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF8282), to(#D14836));
+	border: 1px solid #900000;
+	color: #FFFFFF;
+}
+
+button.red:hover {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF9598), to(#D14836));
+}
+
+button.red:active {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CD5C5C), to(#FC9D98));
+	border: 1px solid #000000;
+}

@@ -1,0 +1,94 @@
+/*
+Example usage:
+
+<section data-role="dialog" class="errorDatabase">
+<h1>This is a title</h1>
+<div class="content">This is my content</div>
+<div class="buttons">
+<button class="button close">Button</button>
+</div>
+</section>
+*/
+
+[data-role=dialog], .dialog {
+	background: #333;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 0 0 15px #000;
+	color: #FFF;
+	margin-left: 20%;
+	margin-right: 20%;
+	opacity: 0.8;
+	position: fixed;
+	top: -675px;
+	width: 60%;
+}
+
+[data-role=dialog] h1, .dialog h1 {
+	border-bottom: 1px solid #FFFFFF;
+	display: block;
+	font-size: 14px;
+	font-weight: bolder;
+	margin: 10px 15px 0px 15px;
+}
+
+[data-role=dialog] div.content, .dialog div.content {
+	display: block;
+	font-size: 10px;
+	margin: 7px 15px 15px 15px;
+	max-height: 640px;
+	overflow: auto;
+}
+
+[data-role=dialog] div.buttons, .dialog div.buttons {
+	margin: 0px 12px 15px 12px;
+	text-align: right;
+}
+
+[data-role=dialog].error, .dialog.error {
+	background: #FF7174;
+}
+
+[data-role=dialog].errorAlert, .dialog.errorAlert {
+	background: #FF7174;
+}
+
+[data-role=dialog].errorAlert div.content, .dialog.errorAlert div.content {
+	background: url(../images/dialog/error_large.png) no-repeat;
+	background-position: -121px -59px;
+	min-height: 64px;
+	padding-left: 72px;
+}
+
+[data-role=dialog].errorCritical, .dialog.errorCritical {
+	background: #FF7174;
+}
+
+[data-role=dialog].errorCritical div.content, .dialog.errorCritical div.content {
+	background: url(../images/dialog/error_large.png) no-repeat;
+	background-position: -178px 0px;
+	min-height: 64px;
+	padding-left: 72px;
+}
+
+[data-role=dialog].errorDatabase, .dialog.errorDatabase {
+	background: #FF7174;
+}
+
+[data-role=dialog].errorDatabase div.content, .dialog.errorDatabase div.content {
+	background: url(../images/dialog/error_large.png) no-repeat;
+	background-position: -57px -113px;
+	min-height: 64px;
+	padding-left: 72px;
+}
+
+[data-role=dialog].errorUser {
+	background: #FF7174;
+}
+
+[data-role=dialog].errorUser div.content, .dialog.errorUser div.content {
+	background: url(../images/dialog/error_large.png) no-repeat;
+	background-position: 0px -176px;
+	min-height: 64px;
+	padding-left: 72px;
+}
