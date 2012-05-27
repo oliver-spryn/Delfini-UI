@@ -1,0 +1,106 @@
+/** 
+ * Delfini UI - Text Input
+ * -------------------------------
+ *
+ * ForwardFour Innovations: http://forwardfour.com/
+ * Delfini UI: http://delfiniui.com/
+ * 
+ * LICENSE
+ * 
+ * By viewing, using, or actively developing this framework in any way, you are
+ * henceforth bound the license agreement, and all of its changes, set forth by
+ * ForwardFour Innovations or the Delfini UI Group. The license can be found,
+ * in its entirety, at this address: http://delfiniui.com/license.
+ * 
+ * Copyright (c) 2012 and Onwards, ForwardFour Innovations & The Delfini UI Group
+ * http://delfiniui.com/license [Proprietary]
+ *
+ *
+ *
+ * Example usage:
+ *
+ * <input type="text" />                       Use on a text input
+ * <input type="password" />                   Use on a password input
+ * <input type="email" />                      Use on an HTML5 email input
+*/
+
+/**
+ * Supporting containers and 
+ * icons
+ * ----------------------------------
+*/
+
+div.inputWrapper {
+	border-radius: 5px;
+	display: inline-block;
+	position: relative;
+	width: 202px;
+}
+
+div.inputWrapper span.inputClear {
+	background: url(../images/textinput/icons.png) no-repeat;
+	background-position: 0px 2px;
+	cursor: pointer;
+	height: 18px;
+	position: absolute;
+	right: 4px;
+	top: 5px;
+	width: 20px;
+}
+
+div.inputWrapper span.inputClear:hover {
+	background-color: #3A3A3A;
+	background-position: 0px -35px;
+}
+
+div.inputWrapper span.passwordPeak {
+	background: url(../images/textinput/icons.png) no-repeat;
+	background-position: 0px -76px;
+	cursor: pointer;
+	height: 18px;
+	position: absolute;
+	right: 4px;
+	top: 5px;
+	width: 20px;
+}
+
+div.inputWrapper span.passwordPeak:hover {
+	background-color: #3A3A3A;
+	background-position: 0px -113px;
+}
+
+/**
+ * Input field styles
+ * ----------------------------------
+*/
+
+input[type=text], input[type=password], input[type=email] {
+	-moz-transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+	-o-transition: 1s ease-in-out;
+	-webkit-transition: 1s ease-in-out;
+	background: #FFFFFF;
+	border: 1px solid #22C3EB;
+	border-radius: 5px;
+	display: block;
+	font-size: 14px;
+	padding: 3px 25px 3px 5px;
+	outline: none;
+	transition: 1s ease-in-out;
+	width: 170px; /* 5px and 25px of padding will make this 200px wide */
+}
+
+input[type=text]:hover, input[type=password]:hover, input[type=email]:hover {
+	-moz-box-shadow: 0 0 3px 3px rgba(34, 195, 235, 0.5);
+	-ms-box-shadow: 0 0 3px 3px rgba(34, 195, 235, 0.5);
+	-o-box-shadow: 0 0 3px 3px rgba(34, 195, 235, 0.5);
+	-webkit-box-shadow: 0 0 3px 3px rgba(34, 195, 235, 0.5);
+	box-shadow: 0 0 3px 3px rgba(34, 195, 235, 0.5);
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+	-moz-box-shadow: 0 0 3px 3px rgba(151, 35, 36, 0.5);
+	-webkit-box-shadow: 0 0 3px 3px rgba(151, 35, 36, 0.5);
+	border: 1px solid rgba(151, 35, 36, 0.5);
+	box-shadow: 0 0 3px 3px rgba(151, 35, 36, 0.5);
+}

@@ -1,58 +1,403 @@
-/*
-Example usage:
-
-<button class="button">Button</button>
-<button class="button red">Button</button>
+/** 
+ * Delfini UI - Buttons
+ * -------------------------------
+ *
+ * ForwardFour Innovations: http://forwardfour.com/
+ * Delfini UI: http://delfiniui.com/
+ * 
+ * LICENSE
+ * 
+ * By viewing, using, or actively developing this framework in any way, you are
+ * henceforth bound the license agreement, and all of its changes, set forth by
+ * ForwardFour Innovations or the Delfini UI Group. The license can be found,
+ * in its entirety, at this address: http://delfiniui.com/license.
+ * 
+ * Copyright (c) 2012 and Onwards, ForwardFour Innovations & The Delfini UI Group
+ * http://delfiniui.com/license [Proprietary]
+ *
+ *
+ *
+ * Example usage:
+ *
+ * <input type="button" value="Button" />       Use on a button input
+ * <input type="reset" value="Button" />        Use on a reset button
+ * <input type="submit" value="Button" />       Use on a submit button
+ * <button>Button</button>                      Use on a standard button
+ * <button class="red">Button</button>          Possible color variant classes include: red, orange, yellow, blue, and green
+ * <button class="large">Button</button>        A large style variant can be used along with the above mentioned color variants
+ * <button disabled>Button</button>             A disabled style will be added to buttons or <input> elements which are disbled
+ * <button disabled="disabled">Button</button>  This method for disabling elements will also be styled
 */
 
-button {
+/**
+ * Default button style grey
+ * ----------------------------------
+*/
+
+button, input[type=submit], input[type=reset], input[type=button] {
 	background-color: #CCCCCC;
 	background: -moz-linear-gradient(0% 90% 90deg, #CCCCCC, #EEEEEE);
 	background: -ms-linear-gradient(#EEEEEE, #CCCCCC);
 	background: -o-linear-gradient(#EEEEEE, #CCCCCC);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEEEEE), to(#CCCCCC));
+	background: -webkit-linear-gradient(#EEEEEE, #CCCCCC);
+	background: linear-gradient(#EEEEEE, #CCCCCC);
 	border: 1px solid #999999;
-	border-radius: 3px;
-	color: #444444;
+	border-radius: 2px;
+	color: #333333;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#CCCCCC');
-	font-size: 10px;
+	font-size: 12px;
 	font-weight: bolder;
 	outline: none;
-	padding: 5px 10px 5px 10px;
+	padding: 5px 15px 5px 15px;
 }
 
-button:hover {
+button:hover, input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover {
 	background: -moz-linear-gradient(0% 90% 90deg, #CCCCCC, #FFFFFF);
 	background: -ms-linear-gradient(#FFFFFF, #CCCCCC);
 	background: -o-linear-gradient(#FFFFFF, #CCCCCC);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#CCCCCC));
+	background: -webkit-linear-gradient(#FFFFFF, #CCCCCC);
+	background: linear-gradient(#FFFFFF, #CCCCCC);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC');
 }
 
-button:active {
+button:active, input[type=submit]:active, input[type=reset]:active, input[type=button]:active {
 	background: -moz-linear-gradient(0% 90% 90deg, #EEEEEE, #DDDDDD);
 	background: -ms-linear-gradient(#DDDDDD, #EEEEEE);
 	background: -o-linear-gradient(#DDDDDD, #EEEEEE);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDDDDD), to(#EEEEEE));
+	background: -webkit-linear-gradient(#DDDDDD, #EEEEEE);
+	background: linear-gradient(#DDDDDD, #EEEEEE);
 	border: 1px solid #666666;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#EEEEEE');
 }
 
-button.red {
+/**
+ * Default button style disabled, must support a disabled class
+ * or look for a "disabled" attribute. There are two styles of
+ * this attribute which must be noted, hence, the really long
+ * CSS selectors:
+ *  - <input type="button" disabled="disabled" />
+ *  - <input type="button" disabled />
+ * 
+ * The :active psudeo selector will override the changing border 
+ * which is established in the :active psudeo selector in the
+ * non-disabled state.
+*/
+
+button.disabled, input[type=submit].disabled, input[type=reset].disabled, input[type=button].disabled, button[disabled=disabled], input[type=submit][disabled=disabled], input[type=reset][disabled=disabled], input[type=button][disabled=disabled], button[disabled], input[type=submit][disabled], input[type=reset][disabled], input[type=button][disabled]  {
+	background: #EEEEEE;
+	color: #AAAAAA;
+}
+
+button.disabled:active, input[type=submit].disabled:active, input[type=reset].disabled:active, input[type=button].disabled:active, button[disabled=disabled]:active, input[type=submit][disabled=disabled]:active, input[type=reset][disabled=disabled]:active, input[type=button][disabled=disabled]:active, button[disabled]:active, input[type=submit][disabled]:active, input[type=reset][disabled]:active, input[type=button][disabled]:active {
+	border: 1px solid #999999;
+}
+
+/**
+ * Button style red variant
+ * ----------------------------------
+*/
+
+button.red, input[type=submit].red, input[type=reset].red, input[type=button].red {
 	background-color: #D14836;
 	background: -moz-linear-gradient(0% 90% 90deg, #D14836, #FF8282);
 	background: -ms-linear-gradient(#FF8282, #D14836);
 	background: -o-linear-gradient(#FF8282, #D14836);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF8282), to(#D14836));
+	background: -webkit-linear-gradient(#FF8282, #D14836);
+	background: linear-gradient(#FF8282, #D14836);
 	border: 1px solid #900000;
 	color: #FFFFFF;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF8282', endColorstr='#D14836');
 }
 
-button.red:hover {
+button.red:hover, input[type=submit].red:hover, input[type=reset].red:hover, input[type=button].red:hover {
+	background: -moz-linear-gradient(0% 90% 90deg, #D14836, #FF9598);
+	background: -ms-linear-gradient(#FF9598, #D14836);
+	background: -o-linear-gradient(#FF9598, #D14836);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF9598), to(#D14836));
+	background: -webkit-linear-gradient(#FF9598, #D14836);
+	background: linear-gradient(#FF9598, #D14836);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9598', endColorstr='#D14836');
 }
 
-button.red:active {
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CD5C5C), to(#FC9D98));
-	border: 1px solid #000000;
+button.red:active, input[type=submit].red:active, input[type=reset].red:active, input[type=button].red:active {
+	background: -moz-linear-gradient(0% 90% 90deg, #D86354, #D65A4A);
+	background: -ms-linear-gradient(#D65A4A, #D86354);
+	background: -o-linear-gradient(#D65A4A, #D86354);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#D65A4A), to(#D86354));
+	background: -webkit-linear-gradient(#D65A4A, #D86354);
+	background: linear-gradient(#D65A4A, #D86354);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D65A4A', endColorstr='#D86354');
+}
+
+/**
+ * Button style red variant disabled, must support a disabled class
+ * or look for a "disabled" attribute. There are two styles of
+ * this attribute which must be noted, hence, the really long
+ * CSS selectors:
+ *  - <input type="button" disabled="disabled" />
+ *  - <input type="button" disabled />
+ *
+ * The :active psudeo selector will override the changing border 
+ * which is established in the :active psudeo selector in the
+ * from the default button disabled state.
+*/
+
+button.red.disabled, input[type=submit].red.disabled, input[type=reset].red.disabled, input[type=button].red.disabled, button[disabled=disabled].red, input[type=submit][disabled=disabled].red, input[type=reset][disabled=disabled].red, input[type=button][disabled=disabled].red, button[disabled].red, input[type=submit][disabled].red, input[type=reset][disabled].red, input[type=button][disabled].red  {
+	background: #E39186;
+}
+
+button.red.disabled:active, input[type=submit].red.disabled:active, input[type=reset].red.disabled:active, input[type=button].red.disabled:active, button[disabled=disabled].red:active, input[type=submit][disabled=disabled].red:active, input[type=reset][disabled=disabled].red:active, input[type=button][disabled=disabled].red:active, button[disabled].red:active, input[type=submit][disabled].red:active, input[type=reset][disabled].red:active, input[type=button][disabled].red:active {
+	border: 1px solid #900000;
+}
+
+/**
+ * Button style blue variant
+ * ----------------------------------
+*/
+
+button.blue, input[type=submit].blue, input[type=reset].blue, input[type=button].blue {
+	background-color: #0461D2;
+	background: -moz-linear-gradient(0% 90% 90deg, #0461D2, #179DFE);
+	background: -ms-linear-gradient(#179DFE, #0461D2);
+	background: -o-linear-gradient(#179DFE, #0461D2);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#179DFE), to(#0461D2));
+	background: -webkit-linear-gradient(#179DFE, #0461D2);
+	background: linear-gradient(#179DFE, #0461D2);
+	border: 1px solid #06F;
+	color: #FFFFFF;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#179DFE', endColorstr='#0461D2');
+}
+
+button.blue:hover, input[type=submit].blue:hover, input[type=reset].blue:hover, input[type=button].blue:hover {
+	background: -moz-linear-gradient(0% 90% 90deg, #0461D2, #81B0E8);
+	background: -ms-linear-gradient(#81B0E8, #0461D2);
+	background: -o-linear-gradient(#81B0E8, #0461D2);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#81B0E8), to(#0461D2));
+	background: -webkit-linear-gradient(#81B0E8, #0461D2);
+	background: linear-gradient(#81B0E8, #0461D2);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#81B0E8', endColorstr='#0461D2');
+}
+
+button.blue:active, input[type=submit].blue:active, input[type=reset].blue:active, input[type=button].blue:active {
+	background: -moz-linear-gradient(0% 90% 90deg, #4F90DF, #3681DB);
+	background: -ms-linear-gradient(#3681DB, #4F90DF);
+	background: -o-linear-gradient(#3681DB, #4F90DF);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3681DB), to(#4F90DF));
+	background: -webkit-linear-gradient(#3681DB, #4F90DF);
+	background: linear-gradient(#3681DB, #4F90DF);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3681DB', endColorstr='#4F90DF');
+}
+
+/**
+ * Button style blue variant disabled, must support a disabled class
+ * or look for a "disabled" attribute. There are two styles of
+ * this attribute which must be noted, hence, the really long
+ * CSS selectors:
+ *  - <input type="button" disabled="disabled" />
+ *  - <input type="button" disabled />
+ *
+ * The :active psudeo selector will override the changing border 
+ * which is established in the :active psudeo selector in the
+ * from the default button disabled state.
+*/
+
+button.blue.disabled, input[type=submit].blue.disabled, input[type=reset].blue.disabled, input[type=button].blue.disabled, button[disabled=disabled].blue, input[type=submit][disabled=disabled].blue, input[type=reset][disabled=disabled].blue, input[type=button][disabled=disabled].blue, button[disabled].blue, input[type=submit][disabled].blue, input[type=reset][disabled].blue, input[type=button][disabled].blue  {
+	background: #83B1E9;
+	color: #666666;
+}
+
+button.blue.disabled:active, input[type=submit].blue.disabled:active, input[type=reset].blue.disabled:active, input[type=button].blue.disabled:active, button[disabled=disabled].blue:active, input[type=submit][disabled=disabled].blue:active, input[type=reset][disabled=disabled].blue:active, input[type=button][disabled=disabled].blue:active, button[disabled].blue:active, input[type=submit][disabled].blue:active, input[type=reset][disabled].blue:active, input[type=button][disabled].blue:active {
+	border: 1px solid #06F;
+}
+
+/**
+ * Button style green variant
+ * ----------------------------------
+*/
+
+button.green, input[type=submit].green, input[type=reset].green, input[type=button].green {
+	background-color: #A1CA6A;
+	background: -moz-linear-gradient(0% 90% 90deg, #A1CA6A, #DBF58D);
+	background: -ms-linear-gradient(#DBF58D, #A1CA6A);
+	background: -o-linear-gradient(#DBF58D, #A1CA6A);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DBF58D), to(#A1CA6A));
+	background: -webkit-linear-gradient(#DBF58D, #A1CA6A);
+	background: linear-gradient(#DBF58D, #A1CA6A);
+	border: 1px solid #528211;
+	color: #3D3D3D;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DBF58D', endColorstr='#A1CA6A');
+}
+
+button.green:hover, input[type=submit].green:hover, input[type=reset].green:hover, input[type=button].green:hover {
+	background: -moz-linear-gradient(0% 90% 90deg, #A1CA6A, #F2FBD6);
+	background: -ms-linear-gradient(#F2FBD6, #A1CA6A);
+	background: -o-linear-gradient(#F2FBD6, #A1CA6A);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F2FBD6), to(#A1CA6A));
+	background: -webkit-linear-gradient(#F2FBD6, #A1CA6A);
+	background: linear-gradient(#F2FBD6, #A1CA6A);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F2FBD6', endColorstr='#A1CA6A');
+}
+
+button.green:active, input[type=submit].green:active, input[type=reset].green:active, input[type=button].green:active {
+	background: -moz-linear-gradient(0% 90% 90deg, #BEDB98, #A3CC6C);
+	background: -ms-linear-gradient(#A3CC6C, #BEDB98);
+	background: -o-linear-gradient(#A3CC6C, #BEDB98);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A3CC6C), to(#BEDB98));
+	background: -webkit-linear-gradient(#A3CC6C, #BEDB98);
+	background: linear-gradient(#A3CC6C, #BEDB98);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A3CC6C', endColorstr='#BEDB98');
+}
+
+/**
+ * Button style green variant disabled, must support a disabled class
+ * or look for a "disabled" attribute. There are two styles of
+ * this attribute which must be noted, hence, the really long
+ * CSS selectors:
+ *  - <input type="button" disabled="disabled" />
+ *  - <input type="button" disabled />
+ *
+ * The :active psudeo selector will override the changing border 
+ * which is established in the :active psudeo selector in the
+ * from the default button disabled state.
+*/
+
+button.green.disabled, input[type=submit].green.disabled, input[type=reset].green.disabled, input[type=button].green.disabled, button[disabled=disabled].green, input[type=submit][disabled=disabled].green, input[type=reset][disabled=disabled].green, input[type=button][disabled=disabled].green, button[disabled].green, input[type=submit][disabled].green, input[type=reset][disabled].green, input[type=button][disabled].green  {
+	background: #DCECC7;
+	color: #666666;
+}
+
+button.green.disabled:active, input[type=submit].green.disabled:active, input[type=reset].green.disabled:active, input[type=button].green.disabled:active, button[disabled=disabled].green:active, input[type=submit][disabled=disabled].green:active, input[type=reset][disabled=disabled].green:active, input[type=button][disabled=disabled].green:active, button[disabled].green:active, input[type=submit][disabled].green:active, input[type=reset][disabled].green:active, input[type=button][disabled].green:active {
+	border: 1px solid #528211;
+}
+
+/**
+ * Button style orange variant
+ * ----------------------------------
+*/
+
+button.orange, input[type=submit].orange, input[type=reset].orange, input[type=button].orange {
+	background-color: #FF7134;
+	background: -moz-linear-gradient(0% 90% 90deg, #FF7134, #FFBFA4);
+	background: -ms-linear-gradient(#FFBFA4, #FF7134);
+	background: -o-linear-gradient(#FFBFA4, #FF7134);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFBFA4), to(#FF7134));
+	background: -webkit-linear-gradient(#FFBFA4, #FF7134);
+	background: linear-gradient(#FFBFA4, #FF7134);
+	border: 1px solid #F63;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBFA4', endColorstr='#FF7134');
+}
+
+button.orange:hover, input[type=submit].orange:hover, input[type=reset].orange:hover, input[type=button].orange:hover {
+	background: -moz-linear-gradient(0% 90% 90deg, #FF7134, #FFD9C9);
+	background: -ms-linear-gradient(#FFD9C9, #FF7134);
+	background: -o-linear-gradient(#FFD9C9, #FF7134);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFD9C9), to(#FF7134));
+	background: -webkit-linear-gradient(#FFD9C9, #FF7134);
+	background: linear-gradient(#FFD9C9, #FF7134);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD9C9', endColorstr='#FF7134');
+}
+
+button.orange:active, input[type=submit].orange:active, input[type=reset].orange:active, input[type=button].orange:active {
+	background: -moz-linear-gradient(0% 90% 90deg, #FFA985, #FF9467);
+	background: -ms-linear-gradient(#FF9467, #FFA985);
+	background: -o-linear-gradient(#FF9467, #FFA985);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF9467), to(#FFA985));
+	background: -webkit-linear-gradient(#FF9467, #FFA985);
+	background: linear-gradient(#FF9467, #FFA985);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9467', endColorstr='#FFA985');
+}
+
+/**
+ * Button style orange variant disabled, must support a disabled class
+ * or look for a "disabled" attribute. There are two styles of
+ * this attribute which must be noted, hence, the really long
+ * CSS selectors:
+ *  - <input type="button" disabled="disabled" />
+ *  - <input type="button" disabled />
+ *
+ * The :active psudeo selector will override the changing border 
+ * which is established in the :active psudeo selector in the
+ * from the default button disabled state.
+*/
+
+button.orange.disabled, input[type=submit].orange.disabled, input[type=reset].orange.disabled, input[type=button].orange.disabled, button[disabled=disabled].orange, input[type=submit][disabled=disabled].orange, input[type=reset][disabled=disabled].orange, input[type=button][disabled=disabled].orange, button[disabled].orange, input[type=submit][disabled].orange, input[type=reset][disabled].orange, input[type=button][disabled].orange  {
+	background: #FC9;
+	color: #666666;
+}
+
+button.orange.disabled:active, input[type=submit].orange.disabled:active, input[type=reset].orange.disabled:active, input[type=button].orange.disabled:active, button[disabled=disabled].orange:active, input[type=submit][disabled=disabled].orange:active, input[type=reset][disabled=disabled].orange:active, input[type=button][disabled=disabled].orange:active, button[disabled].orange:active, input[type=submit][disabled].orange:active, input[type=reset][disabled].orange:active, input[type=button][disabled].orange:active {
+	border: 1px solid #528211;
+}
+
+/**
+ * Button style yellow variant
+ * ----------------------------------
+*/
+
+button.yellow, input[type=submit].yellow, input[type=reset].yellow, input[type=button].yellow {
+	background-color: #E0B324;
+	background: -moz-linear-gradient(0% 90% 90deg, #E0B324, #FFEB93);
+	background: -ms-linear-gradient(#FFEB93, #E0B324);
+	background: -o-linear-gradient(#FFEB93, #E0B324);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFEB93), to(#E0B324));
+	background: -webkit-linear-gradient(#FFEB93, #E0B324);
+	background: linear-gradient(#FFEB93, #E0B324);
+	border: 1px solid #960;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBFA4', endColorstr='#E0B324');
+}
+
+button.yellow:hover, input[type=submit].yellow:hover, input[type=reset].yellow:hover, input[type=button].yellow:hover {
+	background: -moz-linear-gradient(0% 90% 90deg, #E0B324, #FFF5C9);
+	background: -ms-linear-gradient(#FFF5C9, #E0B324);
+	background: -o-linear-gradient(#FFF5C9, #E0B324);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF5C9), to(#E0B324));
+	background: -webkit-linear-gradient(#FFF5C9, #E0B324);
+	background: linear-gradient(#FFF5C9, #E0B324);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF5C9', endColorstr='#E0B324');
+}
+
+button.yellow:active, input[type=submit].yellow:active, input[type=reset].yellow:active, input[type=button].yellow:active {
+	background: -moz-linear-gradient(0% 90% 90deg, #FFEDA0, #E9C964);
+	background: -ms-linear-gradient(#E9C964, #FFEDA0);
+	background: -o-linear-gradient(#E9C964, #FFEDA0);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E9C964), to(#FFEDA0));
+	background: -webkit-linear-gradient(#E9C964, #FFEDA0);
+	background: linear-gradient(#E9C964, #FFEDA0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E9C964', endColorstr='#FFEDA0');
+}
+
+/**
+ * Button style yellow variant disabled, must support a disabled class
+ * or look for a "disabled" attribute. There are two styles of
+ * this attribute which must be noted, hence, the really long
+ * CSS selectors:
+ *  - <input type="button" disabled="disabled" />
+ *  - <input type="button" disabled />
+ *
+ * The :active psudeo selector will override the changing border 
+ * which is established in the :active psudeo selector in the
+ * from the default button disabled state.
+*/
+
+button.yellow.disabled, input[type=submit].yellow.disabled, input[type=reset].yellow.disabled, input[type=button].yellow.disabled, button[disabled=disabled].yellow, input[type=submit][disabled=disabled].yellow, input[type=reset][disabled=disabled].yellow, input[type=button][disabled=disabled].yellow, button[disabled].yellow, input[type=submit][disabled].yellow, input[type=reset][disabled].yellow, input[type=button][disabled].yellow  {
+	background: #FF6;
+	color: #666666;
+}
+
+button.yellow.disabled:active, input[type=submit].yellow.disabled:active, input[type=reset].yellow.disabled:active, input[type=button].yellow.disabled:active, button[disabled=disabled].yellow:active, input[type=submit][disabled=disabled].yellow:active, input[type=reset][disabled=disabled].yellow:active, input[type=button][disabled=disabled].yellow:active, button[disabled].yellow:active, input[type=submit][disabled].yellow:active, input[type=reset][disabled].yellow:active, input[type=button][disabled].yellow:active {
+	border: 1px solid #528211;
+}
+
+/**
+ * Large style button variant
+ * ----------------------------------
+*/
+
+button.large, input[type=submit].large, input[type=reset].large, input[type=button].large {
+	font-size: 14px;
+	padding: 7px 35px 7px 35px;
 }
