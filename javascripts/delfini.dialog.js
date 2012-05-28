@@ -12,8 +12,8 @@ Example usage:
 </section>
 */
 
-$(document).ready(function() {
-	$.fn.delfini.dialog = function() {
+$(document).ready(function() {	
+	$.fn.delfinidialog = function() {
 	//Slide the menu from the top of the screen into view
 		$(this).animate({
 			'top' : '0px'
