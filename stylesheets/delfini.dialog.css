@@ -1,13 +1,37 @@
 /*
-Example usage:
-
-<section data-role="dialog" class="errorDatabase">
-<h1>This is a title</h1>
-<div class="content">This is my content</div>
-<div class="buttons">
-<button class="button close">Button</button>
-</div>
-</section>
+ * Delfini UI - Dialog
+ * -------------------------------
+ *
+ * ForwardFour Innovations: http://forwardfour.com/
+ * Delfini UI: http://delfiniui.com/
+ * 
+ * LICENSE
+ * 
+ * By viewing, using, or actively developing this framework in any way, you are
+ * henceforth bound the license agreement, and all of its changes, set forth by
+ * ForwardFour Innovations or the Delfini UI Group. The license can be found,
+ * in its entirety, at this address: http://delfiniui.com/license.
+ * 
+ * Copyright (c) 2012 and Onwards, ForwardFour Innovations & The Delfini UI Group
+ * http://delfiniui.com/license [Proprietary]
+ *
+ *
+ *
+ * Example usage:
+ *
+ * <section data-role="dialog" class="errorDatabase">
+ * <h1>This is a title</h1>
+ * <div class="content">This is my content</div>
+ * <div class="buttons">
+ * <button class="button close">Button</button>
+ * </div>
+ * </section>
+ *
+ *
+ *
+ * Events dispatched:
+ *  - dialogOpened                             The user has opened the dialog
+ *  - dialogClosed                             The user has closed the dialog
 */
 
 [data-role=dialog], .dialog {
@@ -16,12 +40,12 @@ Example usage:
 	border-bottom-right-radius: 10px;
 	box-shadow: 0 0 15px #000;
 	color: #FFF;
-	margin-left: 20%;
-	margin-right: 20%;
-	opacity: 0.8;
+	margin-left: 10%;
+	margin-right: 10%;
+	opacity: 0.95;
 	position: fixed;
-	top: -675px;
-	width: 60%;
+	top: -900px;
+	width: 80%;
 }
 
 [data-role=dialog] h1, .dialog h1 {

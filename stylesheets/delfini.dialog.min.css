@@ -1,0 +1,37 @@
+/*
+ * Delfini UI - Dialog
+ * -------------------------------
+ *
+ * ForwardFour Innovations: http://forwardfour.com/
+ * Delfini UI: http://delfiniui.com/
+ * 
+ * LICENSE
+ * 
+ * By viewing, using, or actively developing this framework in any way, you are
+ * henceforth bound the license agreement, and all of its changes, set forth by
+ * ForwardFour Innovations or the Delfini UI Group. The license can be found,
+ * in its entirety, at this address: http://delfiniui.com/license.
+ * 
+ * Copyright (c) 2012 and Onwards, ForwardFour Innovations & The Delfini UI Group
+ * http://delfiniui.com/license [Proprietary]
+ *
+ *
+ *
+ * Example usage:
+ *
+ * <section data-role="dialog" class="errorDatabase">
+ * <h1>This is a title</h1>
+ * <div class="content">This is my content</div>
+ * <div class="buttons">
+ * <button class="button close">Button</button>
+ * </div>
+ * </section>
+ *
+ *
+ *
+ * Events dispatched:
+ *  - dialogOpened                             The user has opened the dialog
+ *  - dialogClosed                             The user has closed the dialog
+*/
+
+[data-role=dialog],.dialog{background:#333;border-bottom-left-radius:10px;border-bottom-right-radius:10px;box-shadow:0 0 15px #000;color:#FFF;margin-left:10%;margin-right:10%;opacity:.95;position:fixed;top:-900px;width:80%}[data-role=dialog] h1,.dialog h1{border-bottom:1px solid #fff;display:block;font-size:14px;font-weight:bolder;margin:10px 15px 0 15px}[data-role=dialog] div.content,.dialog div.content{display:block;font-size:10px;margin:7px 15px 15px 15px;max-height:640px;overflow:auto}[data-role=dialog] div.buttons,.dialog div.buttons{margin:0 12px 15px 12px;text-align:right}[data-role=dialog].error,.dialog.error{background:#ff7174}[data-role=dialog].errorAlert,.dialog.errorAlert{background:#ff7174}[data-role=dialog].errorAlert div.content,.dialog.errorAlert div.content{background:url(../images/dialog/error_large.png) no-repeat;background-position:-121px -59px;min-height:64px;padding-left:72px}[data-role=dialog].errorCritical,.dialog.errorCritical{background:#ff7174}[data-role=dialog].errorCritical div.content,.dialog.errorCritical div.content{background:url(../images/dialog/error_large.png) no-repeat;background-position:-178px 0;min-height:64px;padding-left:72px}[data-role=dialog].errorDatabase,.dialog.errorDatabase{background:#ff7174}[data-role=dialog].errorDatabase div.content,.dialog.errorDatabase div.content{background:url(../images/dialog/error_large.png) no-repeat;background-position:-57px -113px;min-height:64px;padding-left:72px}[data-role=dialog].errorUser{background:#ff7174}[data-role=dialog].errorUser div.content,.dialog.errorUser div.content{background:url(../images/dialog/error_large.png) no-repeat;background-position:0 -176px;min-height:64px;padding-left:72px}
