@@ -1,20 +1,58 @@
 /*
-Example usage:
-
-<ul class="dropdown">
-<li>Option</li>
-<li>Option</li>
-<li class="selected">Option</li>
-<li>A longer option</li>
-</ul>
+ * Delfini UI - Drop Down Menu
+ * -------------------------------
+ *
+ * ForwardFour Innovations: http://forwardfour.com/
+ * Delfini UI: http://delfiniui.com/
+ * 
+ * LICENSE
+ * 
+ * By viewing, using, or actively developing this framework in any way, you are
+ * henceforth bound the license agreement, and all of its changes, set forth by
+ * ForwardFour Innovations or the Delfini UI Group. The license can be found,
+ * in its entirety, at this address: http://delfiniui.com/license.
+ * 
+ * Copyright (c) 2012 and Onwards, ForwardFour Innovations & The Delfini UI Group
+ * http://delfiniui.com/license [Proprietary]
+ *
+ *
+ *
+ * Example usage:
+ *
+ * <ul class="dropdown" data-name="menu">      The "dropdown" class will activate this UI widget for a given
+ * <li>Option</li>                             unordered list
+ * <li>Option</li>                             The "data-name" attribute will be the name of the HTML element
+ * <li class="selected">Option</li>            when the data is submitted in a <form>
+ * <li>A longer option</li>                    The "selected" class shows the currently selected option
+ * </ul>
+ *
+ *
+ *
+ * Events dispatched:
+ *  - dropdownReady                            The unordered list has been properly modified and is ready for use
+ *  - menuOpened                               The user has opened the menu
+ *  - menuClosed [FORTH COMMING]               The user has closed the menu
+ *  - menuItemSelected                         A menu item has been selected
+ *  - newMenuItemSelected                      A different menu item than the previously selected item was chosen
 */
+
+div.dropdownWrapper {
+	display: inline-block;
+	height: 25px;
+	margin: 0px;
+	min-width: 25px;
+	padding: 0px;
+}
 
 ul.dropdown {
 	background-color: #CCCCCC;
+	background-image: url(../images/menu/arrow_down.png);
 	background-image: url(../images/menu/arrow_down.png), -moz-linear-gradient(0% 90% 90deg, #CCCCCC, #EEEEEE);
 	background-image: url(../images/menu/arrow_down.png), -ms-linear-gradient(#EEEEEE, #CCCCCC);
 	background-image: url(../images/menu/arrow_down.png), -o-linear-gradient(#EEEEEE, #CCCCCC);
 	background-image: url(../images/menu/arrow_down.png), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEEEEE), to(#CCCCCC));
+	background-image: url(../images/menu/arrow_down.png), -webkit-gradient-linear(#EEEEEE, #CCCCCC);
+	background-image: url(../images/menu/arrow_down.png), linear-gradient(#EEEEEE, #CCCCCC);
 	background-position: center right;
 	background-repeat: no-repeat;
 	border: 1px solid #999999;
@@ -25,67 +63,81 @@ ul.dropdown {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#CCCCCC');
 	font-size: 10px;
 	font-weight: bolder;
+	list-style: none;
+	margin: 0px;
 	outline: none;
 	padding: 5px 23px 5px 10px;
 }
 
 ul.dropdown:hover {
+	background-image: url(../images/menu/arrow_down.png);
 	background-image: url(../images/menu/arrow_down.png), -moz-linear-gradient(0% 90% 90deg, #CCCCCC, #FFFFFF);
 	background-image: url(../images/menu/arrow_down.png), -ms-linear-gradient(#FFFFFF, #CCCCCC);
 	background-image: url(../images/menu/arrow_down.png), -o-linear-gradient(#FFFFFF, #CCCCCC);
 	background-image: url(../images/menu/arrow_down.png), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#CCCCCC));
-	background-position: center right;
-	background-repeat: no-repeat;
+	background-image: url(../images/menu/arrow_down.png), -webkit-gradient-linear(#FFFFFF, #CCCCCC);
+	background-image: url(../images/menu/arrow_down.png), linear-gradient(#FFFFFF, #CCCCCC);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC');
 }
 
 ul.dropdown:active {
-	background-image: url(../images/menu/arrow_down.png),-moz-linear-gradient(0% 90% 90deg, #EEEEEE, #DDDDDD);
-	background-image: url(../images/menu/arrow_down.png),-ms-linear-gradient(#DDDDDD, #EEEEEE);
-	background-image: url(../images/menu/arrow_down.png),-o-linear-gradient(#DDDDDD, #EEEEEE);
-	background-image: url(../images/menu/arrow_down.png),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDDDDD), to(#EEEEEE));
-	background-position: center right;
-	background-repeat: no-repeat;
+	background-image: url(../images/menu/arrow_down.png);
+	background-image: url(../images/menu/arrow_down.png), -moz-linear-gradient(0% 90% 90deg, #EEEEEE, #DDDDDD);
+	background-image: url(../images/menu/arrow_down.png), -ms-linear-gradient(#DDDDDD, #EEEEEE);
+	background-image: url(../images/menu/arrow_down.png), -o-linear-gradient(#DDDDDD, #EEEEEE);
+	background-image: url(../images/menu/arrow_down.png), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDDDDD), to(#EEEEEE));
+	background-image: url(../images/menu/arrow_down.png), -webkit-gradient-linear(#DDDDDD, #EEEEEE);
+	background-image: url(../images/menu/arrow_down.png), linear-gradient(#DDDDDD, #EEEEEE);
 	border: 1px solid #666666;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#EEEEEE');
 }
 
 ul.dropdown li {
-	display: none;
+	height: 0px;
+	visibility: hidden;
 }
 
 ul.dropdown li.selected {
-	display: block;
+	height: auto;
+	visibility: visible;
 }
 
 ul.dropdown.open {
 	background-color: #CCCCCC;
+	background-image: url(../images/menu/arrow_down.png);
 	background-image: -moz-linear-gradient(0% 90% 90deg, #CCCCCC, #FFFFFF);
 	background-image: -ms-linear-gradient(#FFFFFF, #CCCCCC);
 	background-image: -o-linear-gradient(#FFFFFF, #CCCCCC);
 	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#CCCCCC));
+	background-image: url(../images/menu/arrow_down.png), -webkit-gradient-linear(#FFFFFF, #CCCCCC);
+	background-image: url(../images/menu/arrow_down.png), linear-gradient(#FFFFFF, #CCCCCC);
 	border: 1px solid #999999;
 	border-radius: 3px;
-	box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000000;
 	color: #444444;
 	cursor: default;
 	display: inline-block;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#CCCCCC');
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC');
 	font-size: 10px;
 	font-weight: bolder;
 	outline: none;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	max-height: 500px;
 	padding: 5px 23px 5px 10px;
 }
 
 ul.dropdown.open li {
-	display: block;
-	padding: 5px 0px 5px 0px;
+	height: auto;
+	margin: 0 -23px 0 -10px;
+	padding: 5px 23px 5px 10px;
 	text-wrap: none;
+	visibility: visible;
 	width: 100%;
 }
 
 ul.dropdown.open li.selected {
-	background-color: #CCC;
+	background-color: #666666;
 	color: #FFFFFF;
 	margin: 0 -23px 0 -10px;
 	padding: 5px 23px 5px 10px;
