@@ -22,6 +22,8 @@
  * <input type="text" />                       Use on a text input
  * <input type="password" />                   Use on a password input
  * <input type="email" />                      Use on an HTML5 email input
+ * <input type="search" />                     Use on an HTML5 search input
+ * <input class="noIcon" type="text" />        Use on a text input, without any action icons
 */
 
 /**
@@ -39,7 +41,7 @@ div.inputWrapper {
 
 div.inputWrapper span.inputClear {
 	background: url(../images/textinput/icons.png) no-repeat;
-	background-position: 0px 2px;
+	background-position: 0px 4px;
 	cursor: pointer;
 	height: 18px;
 	position: absolute;
@@ -50,7 +52,7 @@ div.inputWrapper span.inputClear {
 
 div.inputWrapper span.inputClear:hover {
 	background-color: #3A3A3A;
-	background-position: 0px -35px;
+	background-position: 0px -33px;
 }
 
 div.inputWrapper span.passwordPeak {
@@ -74,33 +76,37 @@ div.inputWrapper span.passwordPeak:hover {
  * ----------------------------------
 */
 
-input[type=text], input[type=password], input[type=email] {
-	-moz-transition: 1s ease-in-out;
-	-ms-transition: 1s ease-in-out;
-	-o-transition: 1s ease-in-out;
-	-webkit-transition: 1s ease-in-out;
+/* #22C3EB is also a good border color */
+input[type=text], input[type=password], input[type=email], input[type=search] {
 	background: #FFFFFF;
-	border: 1px solid #22C3EB;
+	border: 1px solid #154BC4;
 	border-radius: 5px;
 	display: block;
 	font-size: 14px;
 	padding: 3px 25px 3px 5px;
 	outline: none;
-	transition: 1s ease-in-out;
 	width: 170px; /* 5px and 25px of padding will make this 200px wide */
 }
 
-input[type=text]:hover, input[type=password]:hover, input[type=email]:hover {
-	-moz-box-shadow: 0 0 3px 3px rgba(34, 195, 235, 0.5);
-	-ms-box-shadow: 0 0 3px 3px rgba(34, 195, 235, 0.5);
-	-o-box-shadow: 0 0 3px 3px rgba(34, 195, 235, 0.5);
-	-webkit-box-shadow: 0 0 3px 3px rgba(34, 195, 235, 0.5);
-	box-shadow: 0 0 3px 3px rgba(34, 195, 235, 0.5);
+input[type=text].noIcon, input[type=password].noIcon, input[type=email].noIcon, input[type=search].noIcon {
+	padding: 3px 5px 3px 5px;
+	width: 190px; /* 5px and 5px of padding will make this 200px wide */
 }
 
-input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
-	-moz-box-shadow: 0 0 3px 3px rgba(151, 35, 36, 0.5);
-	-webkit-box-shadow: 0 0 3px 3px rgba(151, 35, 36, 0.5);
-	border: 1px solid rgba(151, 35, 36, 0.5);
-	box-shadow: 0 0 3px 3px rgba(151, 35, 36, 0.5);
+input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, input[type=search]:hover {
+	-moz-box-shadow: 0 0 8px #5496E5;
+	-ms-box-shadow: 0 0 8px #5496E5;
+	-o-box-shadow: 0 0 8px #5496E5;
+	-webkit-box-shadow: 0 0 8px #5496E5;
+	box-shadow: 0 0 8px #5496E5;
+}
+
+/* #972324 is also a good focus color */
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=search]:focus {
+	-moz-box-shadow: 0 0 8px #FF4A4F;
+	-ms-box-shadow: 0 0 8px #FF4A4F;
+	-o-box-shadow: 0 0 8px #FF4A4F;
+	-webkit-box-shadow: 0 0 8px #FF4A4F;
+	border: 1px solid #FF464A;
+	box-shadow: 0 0 8px #FF4A4F;
 }
