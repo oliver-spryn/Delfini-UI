@@ -63,9 +63,6 @@
 	 * ----------------------------------
 	*/
 		
-		var menus = $('ul.dropdown');
-		var menuItems = $('ul.dropdown li');
-		
 	/**
 	 * Wrap the dropdown menu in a container div so that when it is floated with CSS when
 	 * it is opened, the contents around it do not collapse. Also, create a hidden input
@@ -73,7 +70,7 @@
 	 * attribute to name the hidden input element
 	*/
 	
-		menus.wrap('<div class="dropdownWrapper" />').after(function() {
+		$('ul.dropdown').wrap('<div class="dropdownWrapper" />').after(function() {
 			var currentMenu = $(this);
 			
 		//Tell the application that this element has been modified and is ready to go!
@@ -83,7 +80,7 @@
 		});
 		
 	//Open the menu
-		menus.click(function() {
+		$('body').delegate('ul.dropdown', 'click', function() {
 			var currentMenu = $(this);
 			var left = currentMenu.offset().left;
 			var top = currentMenu.offset().top;
@@ -100,8 +97,9 @@
 		 * height of the menu can be calculated. The statement below determines whether 
 		 * or not the menu will spill over the bottom side of the screen when opened.
 		*/
+		
 			if (top + currentMenu.height() > windowHeight) {
-				top -= (top + currentMenu.height() + 20) - windowHeight; //+20 easily makes up for the added height from the shadow and border
+				top -= (top + currentMenu.height() + 20) - windowHeight; //-20 easily makes up for the added height from the shadow and border
 			}
 			
 			currentMenu.css({
@@ -128,15 +126,16 @@
 	 *  - if the clicked object was a menu, dispatch a close event and 
 	 *    close the menu
 	*/
+	
 		$(document).click(function(e) {
 			if (!$(e.target).is('ul.dropdown') && !$(e.target).parents().is('ul.dropdown')) {
 			//Close all open menus
-				menus.removeClass('open').removeAttr('style');
+				$('ul.dropdown').removeClass('open').removeAttr('style');
 			}
 		});
 		
 	//Select an item from the menu
-		menuItems.click(function(e) {
+		$('body').delegate('ul.dropdown li', 'click', function(e) {
 			var currentItem = $(this);
 			var menu = currentItem.parent();
 			var itemNew = true;

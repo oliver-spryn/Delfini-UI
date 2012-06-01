@@ -31,7 +31,7 @@
  * Events dispatched:
  *  - dropdownReady                            The unordered list has been properly modified and is ready for use
  *  - menuOpened                               The user has opened the menu
- *  - menuClosed [FORTH COMMING]               The user has closed the menu
+ *  - menuClosed [FORTH COMING]                The user has closed the menu
  *  - menuItemSelected                         A menu item has been selected
  *  - newMenuItemSelected                      A different menu item than the previously selected item was chosen
 */
@@ -103,14 +103,18 @@ ul.dropdown li.selected {
 }
 
 ul.dropdown.open {
+	-moz-box-shadow: 0 0 5px #000000;
+	-ms-box-shadow: 0 0 5px #000000;
+	-o-box-shadow: 0 0 5px #000000;
+	-webkit-box-shadow: 0 0 5px #000000;
 	background-color: #CCCCCC;
-	background-image: url(../images/menu/arrow_down.png);
+	background-image: none;
 	background-image: -moz-linear-gradient(0% 90% 90deg, #CCCCCC, #FFFFFF);
 	background-image: -ms-linear-gradient(#FFFFFF, #CCCCCC);
 	background-image: -o-linear-gradient(#FFFFFF, #CCCCCC);
 	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#CCCCCC));
-	background-image: url(../images/menu/arrow_down.png), -webkit-gradient-linear(#FFFFFF, #CCCCCC);
-	background-image: url(../images/menu/arrow_down.png), linear-gradient(#FFFFFF, #CCCCCC);
+	background-image: -webkit-gradient-linear(#FFFFFF, #CCCCCC);
+	background-image: linear-gradient(#FFFFFF, #CCCCCC);
 	border: 1px solid #999999;
 	border-radius: 3px;
 	box-shadow: 0 0 5px #000000;
@@ -122,7 +126,7 @@ ul.dropdown.open {
 	font-weight: bolder;
 	outline: none;
 	overflow-x: hidden;
-	overflow-y: scroll;
+	overflow-y: auto;
 	max-height: 500px;
 	padding: 5px 23px 5px 10px;
 }
