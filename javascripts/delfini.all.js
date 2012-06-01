@@ -84,7 +84,7 @@
 			var currentMenu = $(this);
 			var left = currentMenu.offset().left;
 			var top = currentMenu.offset().top;
-			var windowHeight = $(window).height();
+			var documentHeight = $(document).height();
 			
 		//Simply add another CSS class and the menu will open
 			currentMenu.addClass('open');
@@ -98,8 +98,8 @@
 		 * or not the menu will spill over the bottom side of the screen when opened.
 		*/
 		
-			if (top + currentMenu.height() > windowHeight) {
-				top -= (top + currentMenu.height() + 20) - windowHeight; //-20 easily makes up for the added height from the shadow and border
+			if (top + currentMenu.height() > documentHeight) {
+				top -= (top + currentMenu.height() + 20) - documentHeight; //-20 easily makes up for the added height from the shadow and border
 			}
 			
 			currentMenu.css({
