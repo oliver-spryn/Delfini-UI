@@ -507,7 +507,7 @@ button.large, input[type=submit].large, input[type=reset].large, input[type=butt
 
 div.dropdownWrapper {
 	display: inline-block;
-	height: 25px;
+	height: 24px;
 	margin: 0px;
 	min-width: 25px;
 	padding: 0px;
@@ -598,6 +598,7 @@ ul.dropdown.open {
 	overflow-y: auto;
 	max-height: 500px;
 	padding: 5px 23px 5px 10px;
+	z-index: 10;
 }
 
 ul.dropdown.open li {
