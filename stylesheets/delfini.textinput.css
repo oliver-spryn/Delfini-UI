@@ -36,6 +36,7 @@ div.inputWrapper {
 	border-radius: 5px;
 	display: inline-table;
 	position: relative;
+	vertical-align: top;
 	width: 202px;
 }
 
