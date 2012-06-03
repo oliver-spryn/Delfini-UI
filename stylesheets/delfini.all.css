@@ -42,6 +42,22 @@ body {
 	display: none;
 }
 
+.center {
+	text-align: center;
+}
+
+.collapse {
+	height: 0px;
+	margin: 0px;
+	padding: 0px;
+	visibility: hidden;
+	width: 0px;
+}
+
+.hidden {
+	display: none;
+}
+
 /**
  * delfini.button
  * ----------------------------------
@@ -437,6 +453,7 @@ button.large, input[type=submit].large, input[type=reset].large, input[type=butt
 	position: fixed;
 	top: -900px;
 	width: 80%;
+	z-index: 20;
 }
 
 [data-role=dialog] h1, .dialog h1 {

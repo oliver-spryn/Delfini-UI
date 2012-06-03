@@ -36,7 +36,7 @@
 
 (function($) {
 	$(document).ready(function() {
-		var elements = $('input:text, input:password, input[type=email], input[type=search]');
+		var elements = $('input:text:not(.noMod), input:password:not(.noMod), input[type=email]:not(.noMod), input[type=search]:not(.noMod)');
 		
 	//Select all text, password, and email inputs, wrap them in a container for easy reference and apply the appropriate action icon
 		elements.wrap('<div class="inputWrapper" />').after(function() {
