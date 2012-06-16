@@ -76,7 +76,7 @@
 		//Tell the application that this element has been modified and is ready to go!
 			$(this).trigger('dropdownReady');
 			
-			if (currentItem.attr('data-value') && currentItem.attr('data-value') != undefined && currentItem.attr('data-value') != '') {
+			if (currentMenu.attr('data-value') && currentMenu.attr('data-value') != undefined && currentMenu.attr('data-value') != '') {
 				var value = currentMenu.children('li.selected').attr('data-value');
 			} else {
 				var value = currentMenu.children('li.selected').text();
