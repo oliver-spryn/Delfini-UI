@@ -154,7 +154,11 @@
 				e.stopPropagation(); //This prevents a click event from immediately reopening the menu
 				
 			//Update the value of the hidden field
-				menu.siblings('input').val(currentItem.text());
+				if (currentItem.attr('data-value') && currentItem.attr('data-value') != undefined && currentItem.attr('data-value') != '') {
+					menu.siblings('input').val(currentItem.attr('data-value'));
+				} else {
+					menu.siblings('input').val(currentItem.text());
+				}
 				
 			//Tell the application that this component has been closed
 			//This event will be added whenever it can also be added to the $(document) click handler above

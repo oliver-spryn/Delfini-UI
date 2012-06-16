@@ -24,7 +24,8 @@
  * <li>Option</li>                             The "data-name" attribute will be the name of the HTML element
  * <li class="selected">Option</li>            when the data is submitted in a <form>
  * <li>A longer option</li>                    The "selected" class shows the currently selected option
- * </ul>
+ * <li data-value="long">Long</li>             The "data-value" attribute will be used whenever a given value
+ * </ul>                                       is selected, otherwise the value of the <li> is used
  *
  *
  *
@@ -129,7 +130,11 @@
 				e.stopPropagation(); //This prevents a click event from immediately reopening the menu
 				
 			//Update the value of the hidden field
-				menu.siblings('input').val(currentItem.text());
+				if (currentItem.attr('data-value') && currentItem.attr('data-value') != undefined && currentItem.attr('data-value') != '') {
+					menu.siblings('input').val(currentItem.attr('data-value'));
+				} else {
+					menu.siblings('input').val(currentItem.text());
+				}
 				
 			//Tell the application that this component has been closed
 			//This event will be added whenever it can also be added to the $(document) click handler above
