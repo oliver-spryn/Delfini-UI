@@ -52,7 +52,13 @@
 		//Tell the application that this element has been modified and is ready to go!
 			$(this).trigger('dropdownReady');
 			
-			return '<input name="' + currentMenu.attr('data-name') + '" type="hidden" value="' + currentMenu.children('li.selected').text() + '"/>';
+			if (currentItem.attr('data-value') && currentItem.attr('data-value') != undefined && currentItem.attr('data-value') != '') {
+				var value = currentMenu.children('li.selected').attr('data-value');
+			} else {
+				var value = currentMenu.children('li.selected').text();
+			}
+			
+			return '<input name="' + currentMenu.attr('data-name') + '" type="hidden" value="' + value + '"/>';
 		});
 		
 	//Open the menu
