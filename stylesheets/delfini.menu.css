@@ -38,7 +38,7 @@
 
 div.dropdownWrapper {
 	display: inline-block;
-	height: 24px;
+	height: 27px;
 	margin: 0px;
 	min-width: 25px;
 	padding: 0px;
@@ -47,12 +47,12 @@ div.dropdownWrapper {
 ul.dropdown {
 	background-color: #CCCCCC;
 	background-image: url(../images/menu/arrow_down.png);
+	background-image: linear-gradient(#EEEEEE, #CCCCCC), url(../images/menu/arrow_down.png); /* Order flipped so unsupported browsers show the arrow */
 	background-image: url(../images/menu/arrow_down.png), -moz-linear-gradient(0% 90% 90deg, #CCCCCC, #EEEEEE);
 	background-image: url(../images/menu/arrow_down.png), -ms-linear-gradient(#EEEEEE, #CCCCCC);
 	background-image: url(../images/menu/arrow_down.png), -o-linear-gradient(#EEEEEE, #CCCCCC);
 	background-image: url(../images/menu/arrow_down.png), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEEEEE), to(#CCCCCC));
 	background-image: url(../images/menu/arrow_down.png), -webkit-gradient-linear(#EEEEEE, #CCCCCC);
-	background-image: url(../images/menu/arrow_down.png), linear-gradient(#EEEEEE, #CCCCCC);
 	background-position: center right;
 	background-repeat: no-repeat;
 	border: 1px solid #999999;
@@ -60,7 +60,6 @@ ul.dropdown {
 	color: #444444;
 	cursor: default;
 	display: inline-block;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#CCCCCC');
 	font-size: 10px;
 	font-weight: bolder;
 	list-style: none;
@@ -71,25 +70,23 @@ ul.dropdown {
 
 ul.dropdown:hover {
 	background-image: url(../images/menu/arrow_down.png);
+	background-image: linear-gradient(#FFFFFF, #CCCCCC), url(../images/menu/arrow_down.png); /* Order flipped so unsupported browsers show the arrow */
 	background-image: url(../images/menu/arrow_down.png), -moz-linear-gradient(0% 90% 90deg, #CCCCCC, #FFFFFF);
 	background-image: url(../images/menu/arrow_down.png), -ms-linear-gradient(#FFFFFF, #CCCCCC);
 	background-image: url(../images/menu/arrow_down.png), -o-linear-gradient(#FFFFFF, #CCCCCC);
 	background-image: url(../images/menu/arrow_down.png), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#CCCCCC));
 	background-image: url(../images/menu/arrow_down.png), -webkit-gradient-linear(#FFFFFF, #CCCCCC);
-	background-image: url(../images/menu/arrow_down.png), linear-gradient(#FFFFFF, #CCCCCC);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC');
 }
 
 ul.dropdown:active {
 	background-image: url(../images/menu/arrow_down.png);
+	background-image: linear-gradient(#DDDDDD, #EEEEEE), url(../images/menu/arrow_down.png); /* Order flipped so unsupported browsers show the arrow */
 	background-image: url(../images/menu/arrow_down.png), -moz-linear-gradient(0% 90% 90deg, #EEEEEE, #DDDDDD);
 	background-image: url(../images/menu/arrow_down.png), -ms-linear-gradient(#DDDDDD, #EEEEEE);
 	background-image: url(../images/menu/arrow_down.png), -o-linear-gradient(#DDDDDD, #EEEEEE);
 	background-image: url(../images/menu/arrow_down.png), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDDDDD), to(#EEEEEE));
 	background-image: url(../images/menu/arrow_down.png), -webkit-gradient-linear(#DDDDDD, #EEEEEE);
-	background-image: url(../images/menu/arrow_down.png), linear-gradient(#DDDDDD, #EEEEEE);
 	border: 1px solid #666666;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#EEEEEE');
 }
 
 ul.dropdown li {
@@ -121,7 +118,6 @@ ul.dropdown.open {
 	color: #444444;
 	cursor: default;
 	display: inline-block;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC');
 	font-size: 10px;
 	font-weight: bolder;
 	outline: none;
@@ -153,4 +149,15 @@ ul.dropdown.open li:hover {
 	color: #FFFFFF;
 	margin: 0 -23px 0 -10px;
 	padding: 5px 23px 5px 10px;
+}
+
+/**
+ * Webkit-specific hacks
+ * ------------------------------------------
+ */
+ 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	div.dropdownWrapper {
+		height: 24px;
+	}
 }
